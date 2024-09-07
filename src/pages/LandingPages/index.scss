@@ -1,0 +1,16 @@
+header {
+    background-color: #F1F3FF;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    // padding: 0 1.25rem;
+}
+
+footer {
+    display: flex;
+    gap: 5rem;
+}
