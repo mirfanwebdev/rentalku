@@ -1,4 +1,5 @@
 import { Button, Flex } from "antd";
+import trip from '../assets/trip.svg'
 
 const Hero = () => {
     return (
@@ -11,6 +12,9 @@ const Hero = () => {
                 </p>
                 <Button type="primary">Mulai Sewa Mobil</Button>
             </Flex>
+            <div style={{ height: '407px', position: 'absolute', right: '0', bottom: '0' }}>
+                <img src={trip} alt="trip-ilustration" style={{ width: '100%', height: '100%', objectFit: 'cover'}}/>
+            </div>
         </>
         
     )
