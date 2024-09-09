@@ -5,6 +5,8 @@ import './index.scss'
 import SectionOurServices from "./SectionOurServices"
 import SectionWhyUs from "./SectionWhyUs"
 import { Button } from "antd"
+import SectionFaq from "./SectionFaq"
+
 
 const Banner = () => {
     return (
@@ -14,7 +16,7 @@ const Banner = () => {
                 Perjalanan jadi lebih mudah dengan mobil sewaan kami.
                 Pesan sekarang, dapatkan kenyamanan maksimal!
             </p>
-            <Button>Mulai Sewa Mobil</Button>
+            <Button type="primary">Mulai Sewa Mobil</Button>
         </div>
     )
 }
@@ -22,7 +24,6 @@ const Banner = () => {
 const LandingPage = () => {
     return (
         <>
-            {/* <Header /> */}
             <header>
                 <nav>
                     <Navbar />
@@ -30,12 +31,15 @@ const LandingPage = () => {
                 <Hero/>
             </header>
             <section>
-                <SectionOurServices/>
-            </section>
-            <section id="whyus">
-                <SectionWhyUs/>
-            </section>
-            <Banner/>
+                    <SectionOurServices/>
+                </section>
+                <section id="whyus">
+                    <SectionWhyUs/>
+                </section>
+                <Banner />
+                <section id="faq">
+                    <SectionFaq/>
+                </section>
             <footer>
                 <Footer/>
             </footer>

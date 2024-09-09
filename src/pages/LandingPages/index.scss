@@ -24,13 +24,22 @@ section#whyus {
     padding: 4rem 0;
     align-items: center;
     text-align: center;
-    background-color: #1677ff;
+    background-color: #00B0FF;
     border-radius: 1.5rem;
     color: #fff;
 
     p {
         max-width: 468px;
     }
+}
+
+section#faq{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // gap: 5rem;
+    margin: 5rem 0;
+
 }
 
 footer {
