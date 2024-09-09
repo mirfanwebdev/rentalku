@@ -1,5 +1,7 @@
 header {
     background-color: #F1F3FF;
+    position: relative;
+    height: 504px;
 }
 
 nav {
@@ -10,11 +12,15 @@ nav {
     // padding: 0 1.25rem;
 }
 
+section {
+    margin: 5rem 0;
+}
+
 section#whyus {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin: 5rem 0;
+    // margin: 5rem 0;
 }
 
 #banner {
@@ -33,12 +39,20 @@ section#whyus {
     }
 }
 
-section#faq{
+section#testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    // margin: 5rem 0;
+}
+
+section#faq {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    // gap: 5rem;
-    margin: 5rem 0;
+    // // gap: 5rem;
+    // margin: 5rem 0;
 
 }
 

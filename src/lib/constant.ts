@@ -19,3 +19,10 @@ export const ADDRESS: string[] = [
     '0812-3456-7890'
 ]
 
+export const ANSWER_LIST: string[] = [
+    'Persyaratan kami sangat mudah! Anda hanya perlu menyiapkan dokumen standar seperti SIM, KTP, dan beberapa ketentuan lainnya.',
+    'Kami menawarkan fleksibilitas sewa lepas kunci dengan minimal durasi yang sesuai kebutuhan Anda, mulai dari satu hari hingga mingguan.',
+    'Untuk memastikan ketersediaan kendaraan, kami sarankan booking minimal 2-3 hari sebelumnya, terutama pada hari libur atau musim ramai.',
+    'Layanan antar-jemput tersedia dengan biaya tambahan. Biaya bergantung pada jarak lokasi penjemputan dan pengantaran mobil yang Anda pilih.',
+    'Jika terjadi kecelakaan, segera hubungi kami. Kami akan membantu menangani situasi dengan prosedur yang sudah ditetapkan untuk keamanan Anda.',
+]

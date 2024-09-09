@@ -1,18 +1,5 @@
 import { Collapse, Flex } from "antd";
-
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
-
-const texts = [
-    'Persyaratan kami sangat mudah! Anda hanya perlu menyiapkan dokumen standar seperti SIM, KTP, dan beberapa ketentuan lainnya.',
-    'Kami menawarkan fleksibilitas sewa lepas kunci dengan minimal durasi yang sesuai kebutuhan Anda, mulai dari satu hari hingga mingguan.',
-    'Untuk memastikan ketersediaan kendaraan, kami sarankan booking minimal 2-3 hari sebelumnya, terutama pada hari libur atau musim ramai.',
-    'Layanan antar-jemput tersedia dengan biaya tambahan. Biaya bergantung pada jarak lokasi penjemputan dan pengantaran mobil yang Anda pilih.',
-    'Jika terjadi kecelakaan, segera hubungi kami. Kami akan membantu menangani situasi dengan prosedur yang sudah ditetapkan untuk keamanan Anda.',
-]
+import { ANSWER_LIST as texts } from "../../lib/constant";
 
 const items = [
     {

@@ -6,6 +6,7 @@ import SectionOurServices from "./SectionOurServices"
 import SectionWhyUs from "./SectionWhyUs"
 import { Button } from "antd"
 import SectionFaq from "./SectionFaq"
+import SectionTestimonial from "./SectionTestimonial"
 
 
 const Banner = () => {
@@ -30,16 +31,21 @@ const LandingPage = () => {
                 </nav>
                 <Hero/>
             </header>
-            <section>
+            <main>
+                <section>
                     <SectionOurServices/>
                 </section>
                 <section id="whyus">
                     <SectionWhyUs/>
                 </section>
                 <Banner />
+                <section id="testimonial">
+                    <SectionTestimonial/>
+                </section>
                 <section id="faq">
                     <SectionFaq/>
                 </section>
+            </main>
             <footer>
                 <Footer/>
             </footer>
