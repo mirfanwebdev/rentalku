@@ -1,11 +1,12 @@
 import { Button, Flex } from "antd";
-// import './Navbar.scss'
 import { MENU_LIST } from "../lib/constant";
+import Logo from "./Logo";
 
 const Navbar = () => {
     return (
         <>
-            <Flex gap={'1rem'}>
+            <Logo/>
+            <Flex gap={'1.25rem'}>
                 {MENU_LIST.map((item) => <a key={item} href="#">{item}</a>)}
                 <Button type="primary">Register</Button>
             </Flex>

@@ -3,8 +3,8 @@ import trip from '../assets/trip.svg'
 
 const Hero = () => {
     return (
-        <>
-            <Flex vertical gap={'0.5rem'} justify="center" align="flex-start" style={{ maxWidth: '568px' }} >
+        <Flex justify="space-between" wrap gap={'2.5rem'}>
+            <Flex vertical gap={'1rem'} justify="center" align="flex-start" style={{ maxWidth: '568px' }} >
                 <h1>Sewa & Rental Mobil Terbaik di Kawasan Bandung</h1>
                 <p>
                     Selamat datang di Rentalku. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau.
@@ -12,10 +12,11 @@ const Hero = () => {
                 </p>
                 <Button type="primary">Mulai Sewa Mobil</Button>
             </Flex>
-            <div style={{ height: '407px', position: 'absolute', right: '0', bottom: '0' }}>
+            {/* <div style={{ height: '350px', position: 'absolute', right: '8.5rem', bottom: '0' }}> */}
+            <div style={{ height: '350px' }}>
                 <img src={trip} alt="trip-ilustration" style={{ width: '100%', height: '100%', objectFit: 'cover'}}/>
             </div>
-        </>
+        </Flex>
         
     )
 }

@@ -1,12 +1,12 @@
 import Hero from "../../component/Hero"
 import Navbar from "../../component/Navbar"
 import Footer from "../../component/Footer"
-import './index.scss'
 import SectionOurServices from "./SectionOurServices"
 import SectionWhyUs from "./SectionWhyUs"
-import { Button } from "antd"
 import SectionFaq from "./SectionFaq"
 import SectionTestimonial from "./SectionTestimonial"
+import { Button } from "antd"
+import './index.scss'
 
 
 const Banner = () => {
@@ -32,7 +32,7 @@ const LandingPage = () => {
                 <Hero/>
             </header>
             <main>
-                <section>
+                <section id="ourservices">
                     <SectionOurServices/>
                 </section>
                 <section id="whyus">

@@ -1,6 +1,40 @@
-import { Flex } from "antd";
+import { Button, Flex, Space } from "antd";
 import { ADDRESS, MENU_LIST } from "../lib/constant";
-// import './Footer.scss'
+import { FacebookOutlined, InstagramOutlined, XOutlined, MailOutlined, YoutubeOutlined } from "@ant-design/icons";
+import Logo from "./Logo";
+
+const socMedList = [
+    {
+        id: 1,
+        name: 'facebook',
+        link: 'https://www.facebook.com',
+        icon: <FacebookOutlined />,
+    },
+    {
+        id: 2,
+        name: 'instagram',
+        link: 'https://www.instagram.com',
+        icon: <InstagramOutlined />,
+    },
+    {
+        id: 3,
+        name: 'twitter',
+        link: 'https://www.twitter.com',
+        icon: <XOutlined />,
+    },
+    {
+        id: 4,
+        name: 'mail',
+        link: 'https://www.gmail.com',
+        icon: <MailOutlined />,
+    },
+    {
+        id: 5,
+        name: 'youtube',
+        link: 'https://www.youtube.com',
+        icon: <YoutubeOutlined />,
+    }
+]
 const Footer = () => {
     return (
         <>
@@ -12,9 +46,21 @@ const Footer = () => {
             </Flex>
             <Flex vertical gap='0.5rem'>
                 <p>Connect with us:</p>
+                <Space>
+                    {socMedList.map((item) => (
+                        <Button
+                            type="primary"
+                            shape="circle"
+                            key={item.id}
+                            href={item.link}
+                            icon={item.icon}
+                        />
+                    ))}
+                </Space>
             </Flex>
             <Flex vertical gap='0.5rem'>
                 <p>Rentalku 2024</p>
+                <Logo/>
             </Flex>
         </>
     )
