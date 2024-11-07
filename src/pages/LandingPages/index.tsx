@@ -1,12 +1,12 @@
 import Hero from "../../component/Hero"
-import Navbar from "../../component/Navbar"
+import Header from "../../component/Header"
 import Footer from "../../component/Footer"
-import './index.scss'
 import SectionOurServices from "./SectionOurServices"
 import SectionWhyUs from "./SectionWhyUs"
-import { Button } from "antd"
 import SectionFaq from "./SectionFaq"
 import SectionTestimonial from "./SectionTestimonial"
+import { Button } from "antd"
+import './index.scss'
 
 
 const Banner = () => {
@@ -25,14 +25,13 @@ const Banner = () => {
 const LandingPage = () => {
     return (
         <>
-            <header>
-                <nav>
-                    <Navbar />
-                </nav>
-                <Hero/>
-            </header>
+            <Header>
+                <Hero>
+                    <Button type="primary">Mulai Sewa Mobil</Button>
+                </Hero>
+            </Header>
             <main>
-                <section>
+                <section id="ourservices">
                     <SectionOurServices/>
                 </section>
                 <section id="whyus">

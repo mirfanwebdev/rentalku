@@ -26,3 +26,9 @@ export const ANSWER_LIST: string[] = [
     'Layanan antar-jemput tersedia dengan biaya tambahan. Biaya bergantung pada jarak lokasi penjemputan dan pengantaran mobil yang Anda pilih.',
     'Jika terjadi kecelakaan, segera hubungi kami. Kami akan membantu menangani situasi dengan prosedur yang sudah ditetapkan untuk keamanan Anda.',
 ]
+
+export const TESTIMONY_LIST: string[] = [
+    'Mobilnya bersih dan nyaman, proses sewa sangat mudah. Pelayanan cepat dan ramah, membuat perjalanan saya jadi lancar. Harga juga terjangkau. Pasti akan sewa lagi di sini!',
+    'Mobilnya bagus, terawat, dan paling aman di tempatnya. Saya sangat puas dan pasti akan sewa lagi di sini untuk perjalanan selanjutnya',
+    'Layanan top! Mobil sesuai pesanan, diantar tepat waktu. Proses simpel, staf responsif. Sewa mobil di sini sangat memuaskan, highly recommended!',
+]

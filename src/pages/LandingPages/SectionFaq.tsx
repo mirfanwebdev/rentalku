@@ -1,7 +1,13 @@
 import { Collapse, Flex } from "antd";
 import { ANSWER_LIST as texts } from "../../lib/constant";
 
-const items = [
+interface FaqItem {
+    key: string;
+    label: string;
+    children: JSX.Element
+}
+
+const items: FaqItem[] = [
     {
         key: '1',
         label: 'Apa saja syarat yang dibutuhkan?',

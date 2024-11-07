@@ -1,19 +1,20 @@
-header {
-    background-color: #F1F3FF;
-    position: relative;
-    height: 504px;
-}
+// header {
+//     background-color: #F1F3FF;
+//     position: relative;
+//     // height: 454px;
+//     padding: 1.5rem 8.5rem 0 8.5rem;
+// }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    // padding: 0 1.25rem;
-}
+// nav {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     // padding: 0 1.25rem;
+// }
 
 section {
-    margin: 5rem 0;
+    margin: 8rem 8.5rem;
 }
 
 section#whyus {
@@ -33,6 +34,7 @@ section#whyus {
     background-color: #00B0FF;
     border-radius: 1.5rem;
     color: #fff;
+    margin: auto 8.5rem;
 
     p {
         max-width: 468px;
@@ -58,5 +60,23 @@ section#faq {
 
 footer {
     display: flex;
-    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 5rem 8.5rem 2.5rem 8.5rem;
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        padding: 1.5rem 1rem 0 1rem;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    section, footer, #banner {
+        margin: 2.5rem 1rem;
+    }
+    
 }

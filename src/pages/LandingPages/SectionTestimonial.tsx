@@ -1,18 +1,23 @@
 import { Avatar, Card, Flex, Space } from "antd";
 import { StarFilled } from "@ant-design/icons";
+import { TESTIMONY_LIST as captionTestimonials } from "../../lib/constant";
 
-const captionTestimonials = [
-    'Mobilnya bersih dan nyaman, proses sewa sangat mudah. Pelayanan cepat dan ramah, membuat perjalanan saya jadi lancar. Harga juga terjangkau. Pasti akan sewa lagi di sini!',
-    'Mobilnya bagus, terawat, dan paling aman di tempatnya. Saya sangat puas dan pasti akan sewa lagi di sini untuk perjalanan selanjutnya',
-    'Layanan top! Mobil sesuai pesanan, diantar tepat waktu. Proses simpel, staf responsif. Sewa mobil di sini sangat memuaskan, highly recommended!',
-]
+interface Testimony {
+    id: number;
+    imgUrl: string;
+    name: string;
+    age: number;
+    city: string;
+    rating: number;
+    content: string;
+}
 
-const listTestimonials = [
+const listTestimonials: Testimony[] = [
     {
         id: 1,
         imgUrl: 'https://api.dicebear.com/9.x/lorelei/svg?seed=Danny',
         name: 'Dani',
-        age: 30,
+        age: 28,
         city: 'Bandung',
         rating: 5,
         content: captionTestimonials[0],
@@ -22,7 +27,7 @@ const listTestimonials = [
         id: 2,
         imgUrl: 'https://api.dicebear.com/9.x/lorelei/svg?seed=Joseph',
         name: 'Joseph',
-        age: 30,
+        age: 25,
         city: 'Bandung',
         rating: 5,
         content: captionTestimonials[1],
@@ -31,31 +36,42 @@ const listTestimonials = [
         id: 3,
         imgUrl: 'https://api.dicebear.com/9.x/lorelei/svg?seed=Jennifer',
         name: 'Ana',
-        age: 30,
+        age: 22,
         city: 'Bandung',
         rating: 5,
         content: captionTestimonials[2],
     }
 ]
+
+const Rating = ({ rating }: { rating: number }) => {
+    return (
+        <Space style={{color: '#F9CC00'}}>
+            {[...Array(rating)].map((_, index) => (
+                <StarFilled key={index} />
+            ))}
+        </Space>
+    )
+}
+
+const TestimonyCard = ({ imgUrl, name, age, city, rating, content }: Testimony ) => {
+    return (
+        <Card style={{ backgroundColor: '#F1F3FF' }}>
+            <Flex align="center" gap={'0.5rem'}>
+                <Avatar size={64} src={imgUrl} />
+                <Flex vertical style={{ maxWidth: '260px' }}>
+                    <Rating rating={rating} />
+                    <p>"{content}"</p>
+                    <p style={{fontWeight: 'bold', marginTop: '0.25rem'}}>{name} {age}, {city}</p>
+                </Flex>
+            </Flex>
+        </Card>
+    )
+}
 const Testimonials = () => {
     return (
-        <Flex wrap gap={'1rem'} style={{overflow: 'auto'}}>
+        <Flex wrap justify="center" gap={'1rem'}>
             {listTestimonials.map((item) => (
-                <Card style={{ backgroundColor: '#F1F3FF' }}>
-                    <Flex align="center" gap={'0.5rem'}>
-                        <Avatar size={64} src={item.imgUrl} />
-                        <Flex vertical style={{width: '280px'}}>
-                            <Space style={{color: '#F9CC00'}}>
-                            {[...Array(item.rating)].map((_, index) => (
-                                <StarFilled key={index} />
-                            ))}
-                            </Space>
-                            <p>"{item.content}"</p>
-                            <p style={{fontWeight: 'bold', marginTop: '0.25rem'}}>{item.name} {item.age}, {item.city}</p>
-                        </Flex>
-                    </Flex>
-                    
-                </Card>
+                <TestimonyCard key={item.id} {...item} />
             ))}
         </Flex>
     )
@@ -65,7 +81,7 @@ const SectionTestimonial = () => {
     return (
         <>
             <h2>Testimonial</h2>
-            <p>Berbagai review positif dari beberapa pelanggan kami.</p>
+            <p style={{textAlign: 'center'}}>Berbagai review positif dari beberapa pelanggan kami.</p>
             <Testimonials/>
         </>
  )
