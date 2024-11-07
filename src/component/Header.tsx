@@ -2,17 +2,17 @@ import { Flex } from "antd";
 import Navbar from "./Navbar";
 
 interface HeaderProps {
-    children: JSX.Element
+    children?: JSX.Element
 }
 
-const Header = ({children}: HeaderProps) => {
+const Header = ({ children }: HeaderProps) => {
     return (
         <>
-            <header style={{ backgroundColor: '#F1F3FF', position: 'relative', padding: '1.5rem 8.5rem 0  8.5rem'}}>
+            <header style={{ backgroundColor: '#F1F3FF', position: 'relative', padding: '1.5rem 8.5rem 0  8.5rem', minHeight: '200px' }}>
                 <Flex justify="space-between" align="center" wrap >
-                    <Navbar/>
+                    <Navbar />
                 </Flex>
-                {children}
+                {children && <div>{children}</div>}
             </header>
         </>
     )

@@ -1,8 +1,9 @@
 import { Flex } from "antd";
 import trip from '../assets/trip.svg'
+import { ReactNode } from "react";
 
 interface HeroProps {
-    children: JSX.Element;
+    children?: ReactNode;
 }
 const Hero = ({children}: HeroProps) => {
     return (
@@ -13,7 +14,7 @@ const Hero = ({children}: HeroProps) => {
                     Selamat datang di Rentalku. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau.
                     Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24jam.
                 </p>
-                {children}
+                {children && <div>{children}</div>}
             </Flex>
             {/* <div style={{ height: '350px', position: 'absolute', right: '8.5rem', bottom: '0' }}> */}
             <div style={{ height: '350px' }}>
