@@ -1,4 +1,4 @@
-import { Card, Flex } from "antd";
+import { Card, Row, Col } from "antd";
 import { LikeFilled, CreditCardFilled, ClockCircleFilled, SafetyCertificateFilled } from "@ant-design/icons";
 
 interface CardItem {
@@ -35,20 +35,22 @@ const SectionWhyUs = () => {
         <>
             <h2>Why Us?</h2>
             <p>mengapa harus pilih Rentalku?</p>
-            <Flex justify="space-between" wrap>
+            <Row gutter={[16, 16]}>
                 {cardList.map((item) => (
-                    <Card
-                        key={item.title}
-                        style={{ width: 268 }}
-                    >
+                    <Col key={item.title} xs={24} sm={12} md={8} lg={6}>
+                        <Card
+                        // style={{ width: 268 }}
+                        >
                         <div style={{fontSize: '1.5rem', color: '#00B0FF'}}>
                             {item.icon}
                         </div>
                         <h3 style={{textTransform: 'capitalize'}}>{item.title}</h3>
                         <p>{item.desc}</p>
-                    </Card>
+                        </Card>
+                    </Col>
+                    
                 ))}
-            </Flex>
+            </Row>
         </>
     )
 }

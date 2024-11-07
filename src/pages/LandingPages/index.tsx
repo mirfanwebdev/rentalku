@@ -1,5 +1,5 @@
 import Hero from "../../component/Hero"
-import Navbar from "../../component/Navbar"
+import Header from "../../component/Header"
 import Footer from "../../component/Footer"
 import SectionOurServices from "./SectionOurServices"
 import SectionWhyUs from "./SectionWhyUs"
@@ -25,12 +25,11 @@ const Banner = () => {
 const LandingPage = () => {
     return (
         <>
-            <header>
-                <nav>
-                    <Navbar />
-                </nav>
-                <Hero/>
-            </header>
+            <Header>
+                <Hero>
+                    <Button type="primary">Mulai Sewa Mobil</Button>
+                </Hero>
+            </Header>
             <main>
                 <section id="ourservices">
                     <SectionOurServices/>

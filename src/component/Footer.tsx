@@ -3,7 +3,14 @@ import { ADDRESS, MENU_LIST } from "../lib/constant";
 import { FacebookOutlined, InstagramOutlined, XOutlined, MailOutlined, YoutubeOutlined } from "@ant-design/icons";
 import Logo from "./Logo";
 
-const socMedList = [
+interface SocialMedia {
+    id: number;
+    name: string;
+    link: string;
+    icon: JSX.Element;
+}
+
+const socMedList: SocialMedia[] = [
     {
         id: 1,
         name: 'facebook',
@@ -47,7 +54,7 @@ const Footer = () => {
             <Flex vertical gap='0.5rem'>
                 <p>Connect with us:</p>
                 <Space>
-                    {socMedList.map((item) => (
+                    {socMedList.map((item: SocialMedia) => (
                         <Button
                             type="primary"
                             shape="circle"

@@ -1,17 +1,17 @@
-header {
-    background-color: #F1F3FF;
-    position: relative;
-    // height: 454px;
-    padding: 1.5rem 8.5rem 0 8.5rem;
-}
+// header {
+//     background-color: #F1F3FF;
+//     position: relative;
+//     // height: 454px;
+//     padding: 1.5rem 8.5rem 0 8.5rem;
+// }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    // padding: 0 1.25rem;
-}
+// nav {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     // padding: 0 1.25rem;
+// }
 
 section {
     margin: 8rem 8.5rem;
@@ -66,9 +66,13 @@ footer {
     margin: 5rem 8.5rem 2.5rem 8.5rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
     header {
         padding: 1.5rem 1rem 0 1rem;
+    }
+
+    header nav {
+        display: none;
     }
 
     section, footer, #banner {

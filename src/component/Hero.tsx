@@ -1,7 +1,10 @@
-import { Button, Flex } from "antd";
+import { Flex } from "antd";
 import trip from '../assets/trip.svg'
 
-const Hero = () => {
+interface HeroProps {
+    children: JSX.Element;
+}
+const Hero = ({children}: HeroProps) => {
     return (
         <Flex justify="space-between" wrap gap={'2.5rem'}>
             <Flex vertical gap={'1rem'} justify="center" align="flex-start" style={{ maxWidth: '568px' }} >
@@ -10,7 +13,7 @@ const Hero = () => {
                     Selamat datang di Rentalku. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau.
                     Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24jam.
                 </p>
-                <Button type="primary">Mulai Sewa Mobil</Button>
+                {children}
             </Flex>
             {/* <div style={{ height: '350px', position: 'absolute', right: '8.5rem', bottom: '0' }}> */}
             <div style={{ height: '350px' }}>

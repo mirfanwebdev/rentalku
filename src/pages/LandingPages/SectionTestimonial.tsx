@@ -42,25 +42,36 @@ const listTestimonials: Testimony[] = [
         content: captionTestimonials[2],
     }
 ]
+
+const Rating = ({ rating }: { rating: number }) => {
+    return (
+        <Space style={{color: '#F9CC00'}}>
+            {[...Array(rating)].map((_, index) => (
+                <StarFilled key={index} />
+            ))}
+        </Space>
+    )
+}
+
+const TestimonyCard = ({ imgUrl, name, age, city, rating, content }: Testimony ) => {
+    return (
+        <Card style={{ backgroundColor: '#F1F3FF' }}>
+            <Flex align="center" gap={'0.5rem'}>
+                <Avatar size={64} src={imgUrl} />
+                <Flex vertical style={{ maxWidth: '260px' }}>
+                    <Rating rating={rating} />
+                    <p>"{content}"</p>
+                    <p style={{fontWeight: 'bold', marginTop: '0.25rem'}}>{name} {age}, {city}</p>
+                </Flex>
+            </Flex>
+        </Card>
+    )
+}
 const Testimonials = () => {
     return (
         <Flex wrap justify="center" gap={'1rem'}>
             {listTestimonials.map((item) => (
-                <Card style={{ backgroundColor: '#F1F3FF' }}>
-                    <Flex align="center" gap={'0.5rem'}>
-                        <Avatar size={64} src={item.imgUrl} />
-                        <Flex vertical style={{maxWidth: '260px' }}>
-                            <Space style={{color: '#F9CC00'}}>
-                            {[...Array(item.rating)].map((_, index) => (
-                                <StarFilled key={index} />
-                            ))}
-                            </Space>
-                            <p>"{item.content}"</p>
-                            <p style={{fontWeight: 'bold', marginTop: '0.25rem'}}>{item.name} {item.age}, {item.city}</p>
-                        </Flex>
-                    </Flex>
-                    
-                </Card>
+                <TestimonyCard key={item.id} {...item} />
             ))}
         </Flex>
     )
@@ -70,7 +81,7 @@ const SectionTestimonial = () => {
     return (
         <>
             <h2>Testimonial</h2>
-            <p>Berbagai review positif dari beberapa pelanggan kami.</p>
+            <p style={{textAlign: 'center'}}>Berbagai review positif dari beberapa pelanggan kami.</p>
             <Testimonials/>
         </>
  )
