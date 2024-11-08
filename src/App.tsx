@@ -2,6 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.scss'
+import CarDetailPage from './pages/CarDetailPage'
 import CarListPage from './pages/CarListPage'
 import LandingPage from './pages/LandingPages'
 import SearchPage from './pages/SearchPage'
@@ -13,7 +14,8 @@ function App() {
     <>
       {/* <LandingPage /> */}
       {/* <SearchPage/> */}
-      <CarListPage/>
+      {/* <CarListPage/> */}
+      <CarDetailPage />
     </>
   )
 }
