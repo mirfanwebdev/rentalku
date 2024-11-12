@@ -1,21 +1,12 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { RouterProvider } from 'react-router-dom'
 import './App.scss'
-import CarDetailPage from './pages/CarDetailPage'
-import CarListPage from './pages/CarListPage'
-import LandingPage from './pages/LandingPages'
-import SearchPage from './pages/SearchPage'
+import routes from './routes'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* <LandingPage /> */}
-      {/* <SearchPage/> */}
-      {/* <CarListPage/> */}
-      <CarDetailPage />
+      <RouterProvider router={routes} />
     </>
   )
 }

@@ -7,6 +7,7 @@ import SectionFaq from "./SectionFaq"
 import SectionTestimonial from "./SectionTestimonial"
 import { Button } from "antd"
 import './index.scss'
+import { Link } from "react-router-dom"
 
 
 const Banner = () => {
@@ -17,7 +18,9 @@ const Banner = () => {
                 Perjalanan jadi lebih mudah dengan mobil sewaan kami.
                 Pesan sekarang, dapatkan kenyamanan maksimal!
             </p>
-            <Button type="primary">Mulai Sewa Mobil</Button>
+            <Link to={'/car'}>
+                <Button type="primary">Mulai Sewa Mobil</Button>
+            </Link>
         </div>
     )
 }
@@ -27,26 +30,28 @@ const LandingPage = () => {
         <>
             <Header>
                 <Hero>
-                    <Button type="primary">Mulai Sewa Mobil</Button>
+                    <Link to={'/car'}>
+                        <Button type="primary">Mulai Sewa Mobil</Button>
+                    </Link>
                 </Hero>
             </Header>
             <main>
                 <section id="ourservices">
-                    <SectionOurServices/>
+                    <SectionOurServices />
                 </section>
                 <section id="whyus">
-                    <SectionWhyUs/>
+                    <SectionWhyUs />
+                </section>
+                <section id="testimonial">
+                    <SectionTestimonial />
                 </section>
                 <Banner />
-                <section id="testimonial">
-                    <SectionTestimonial/>
-                </section>
                 <section id="faq">
-                    <SectionFaq/>
+                    <SectionFaq />
                 </section>
             </main>
             <footer>
-                <Footer/>
+                <Footer />
             </footer>
         </>
     )
