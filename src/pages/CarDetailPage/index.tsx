@@ -1,4 +1,4 @@
-import { Card, Collapse, CollapseProps, DatePicker, Flex, Space } from "antd"
+import { Button, Card, Collapse, CollapseProps, DatePicker, Flex, Space } from "antd"
 import Footer from "../../component/Footer"
 import Header from "../../component/Header"
 import SearchBox from "../../component/SearchBox"
@@ -61,6 +61,11 @@ const CardOrder = () => {
                     <p>Tentukan tanggal sewa mobil</p>
                     <DatePicker />
                 </label>
+                <Flex justify="space-between">
+                    <p>Total</p>
+                    <p style={{ fontWeight: 'bold' }}>Rp. 1.000.000</p>
+                </Flex>
+                <Button type="primary" style={{ width: '100%' }}>Pesan Sekarang</Button>
             </Space>
         </Card>
     )
