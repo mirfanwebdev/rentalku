@@ -13,7 +13,7 @@ export const login = async (credentials: { email: string; password: string }) =>
   return response;
 };
 
-export const logout = async (token: string): Promise<Response> => {
+export const register = async (token: string): Promise<Response> => {
   const response = await fetch(`${baseUrl}/customer/auth/logout`, {
     method: 'POST',
     headers: {
