@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import getCarByIdReducer from "./features/getCarById/getCarByIdSlice"
 import getCarListReducer from "./features/getCarList/getCarListSlice"
+import searchCarReducer from "./features/searchCar/searchCarSlice"
 
 
 export const store = configureStore({
     reducer: {
-        car: getCarByIdReducer
-        cars: getCarListReducer
+        car: getCarByIdReducer,
+        cars: getCarListReducer,
+        search: searchCarReducer,
     },
 })
 
