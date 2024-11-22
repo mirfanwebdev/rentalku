@@ -15,9 +15,12 @@ export interface carItem {
 
 interface ContainerListProps {
     cars: carItem[]
+    current: number
+    total?: number
+    handlePage: (page: number) => void
 }
 
-const ContainerList = ({ cars }: ContainerListProps) => {
+const ContainerList = ({ cars, current, total, handlePage }: ContainerListProps) => {
     return (
         <>
             <Row gutter={[24, 16]} style={{ paddingTop: '7.5rem' }}>
@@ -40,7 +43,13 @@ const ContainerList = ({ cars }: ContainerListProps) => {
                 ))}
 
             </Row>
-            <Pagination defaultCurrent={1} total={50} />
+            <Pagination
+                defaultCurrent={1}
+                current={current}
+                onChange={handlePage}
+                pageSize={10}
+                total={total}
+            />
         </>
     )
 }

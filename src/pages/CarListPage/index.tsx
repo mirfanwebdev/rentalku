@@ -8,13 +8,13 @@ import "./index.scss"
 
 const CarListPage = () => {
     const location = useLocation()
-    const { carList } = useFetchCars(location.search)
+    const { carList, current, total, handlePage } = useFetchCars(location.search)
     return (
         <>
             <Header />
             <main>
                 <SearchBox />
-                <ContainerList cars={carList} />
+                <ContainerList cars={carList} current={current} total={total} handlePage={handlePage} />
             </main>
             <footer>
                 <Footer />

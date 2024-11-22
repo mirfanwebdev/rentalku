@@ -12,7 +12,8 @@ export const fetchCarList = createAsyncThunk(
 
 const initialState = {
     carList: [],
-    currentPage: null,
+    pageCurrent: 0,
+    itemTotal: 0,
 }
 
 export const getCarListSlice = createSlice({
@@ -22,7 +23,8 @@ export const getCarListSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchCarList.fulfilled, (state, action) => {
             state.carList = action.payload.cars
-            state.currentPage = action.payload.page
+            state.pageCurrent = action.payload.page
+            state.itemTotal = action.payload.count
         })
     }
 })
