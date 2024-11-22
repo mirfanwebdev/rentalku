@@ -14,11 +14,11 @@ const routes = createBrowserRouter([
         element: <SearchPage />,
     },
     {
-        path: '/car/search/:query',
+        path: '/car/:query',
         element: <CarListPage />,
     },
     {
-        path: 'car/:id',
+        path: 'car/detail/:id',
         element: <CarDetailPage />
     }
 

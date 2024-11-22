@@ -1,6 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+export interface SearchCar {
+    name: string
+    category: string
+    price: number
+    status: boolean
+}
+
+const initialState: SearchCar = {
     name: '',
     category: '',
     price: 0,

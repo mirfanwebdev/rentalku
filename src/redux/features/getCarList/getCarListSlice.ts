@@ -2,21 +2,17 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { carAPI } from "../../../api/carAPI";
 
 
-const fetchCarList = createAsyncThunk(
+export const fetchCarList = createAsyncThunk(
     "cars/fetchCars",
-    async () => {
-        try {
-            const response = await carAPI.getCarList()
-            return response.json()
-        } catch (error) {
-            console.log(error)
-        }
-       
+    async (params: string) => {
+        const response = await carAPI.getCarList(params)
+        return response.json()
     }
 );
 
 const initialState = {
     carList: [],
+    currentPage: null,
 }
 
 export const getCarListSlice = createSlice({
@@ -25,7 +21,8 @@ export const getCarListSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchCarList.fulfilled, (state, action) => {
-            state.carList = action.payload.data
+            state.carList = action.payload.cars
+            state.currentPage = action.payload.page
         })
     }
 })

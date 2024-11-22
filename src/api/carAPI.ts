@@ -1,8 +1,8 @@
 import { baseUrl, defaultHeader } from "./config"
 
-const getCarList = async (): Promise<Response> => {
+const getCarList = async (params: string): Promise<Response> => {
    const response =  await fetch(
-        `${baseUrl}/customer/v2/cars?`, {
+        `${baseUrl}/customer/v2/car${params}`, {
             method: 'GET',
             headers: defaultHeader,
         }
