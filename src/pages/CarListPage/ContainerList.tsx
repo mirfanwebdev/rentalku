@@ -1,21 +1,10 @@
 import { Button, Card, Col, Pagination, Row, Space } from "antd";
 import { Link } from "react-router-dom";
-
-export interface carItem {
-    id: number
-    name: string
-    category: string
-    price: number
-    status: boolean
-    start_rent_at: string
-    finnish_rent_at: string
-    createAt: string
-    updateAt: string
-    image: string
-}
+import { localPriceFormat } from "../../utils/localPriceFormat";
+import CarItem from "../../interface/carItem";
 
 interface ContainerListProps {
-    cars: carItem[]
+    cars: CarItem[]
     current: number
     total?: number
     handlePage: (page: number) => void
@@ -35,7 +24,7 @@ const ContainerList = ({ cars, current, total, handlePage }: ContainerListProps)
                                         : <img src="https://placehold.co/300x200" alt="image" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
                                 </div>
                                 <p>{item.name}</p>
-                                <p>Rp. {item.price}</p>
+                                <p>{(localPriceFormat(item.price))}</p>
                                 <p style={{ width: '285px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum molestiae, excepturi asperiores repellendus perferendis explicabo molestias eos quibusdam sed! Perspiciatis fugit animi laborum rerum in fuga! Quisquam rem delectus odio!</p>
                                 <Link to={`/car/detail/${item.id}`}>
                                     <Button type="primary" style={{ width: '100%' }}>Pesan Sekarang</Button>

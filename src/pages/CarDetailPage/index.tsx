@@ -3,10 +3,13 @@ import Footer from "../../component/Footer"
 import Header from "../../component/Header"
 import SearchBox from "../../component/SearchBox"
 import { EXCLUDE, INCLUDE, ListFeature, RULES } from "../../utils/ListFeature"
-import './index.scss'
 import { useParams } from "react-router-dom"
 import useCarById from "../../hooks/useCarById"
-import CarDetail from "../../interface/carDetail"
+import { carCategory } from "../../utils/carCategory"
+import { localPriceFormat } from "../../utils/localPriceFormat"
+import CarItem from "../../interface/carItem"
+import './index.scss'
+
 interface Section {
     title: string,
     list?: ListFeature,
@@ -54,29 +57,43 @@ const DetailPackage = () => {
 }
 
 interface CardOrderProps {
-    car: CarDetail
+    car: CarItem
 }
 
 const CardOrder = ({ car }: CardOrderProps) => {
     return (
         <Card>
             <Space direction="vertical">
-                <div style={{ width: '400px', height: '200px' }}>
+                <div style={{
+                    width: '400px',
+                    height: '200px'
+                }}>
                     {car.image ?
-                        <img src={car.image} alt={car.name} width={'100%'} />
-                        : <img src="https://placehold.co/400x200" alt="image-car" width={'100%'} />
+                        <img
+                            src={car.image}
+                            alt={car.name}
+                            width={'100%'}
+                        />
+                        : <img
+                            src="https://placehold.co/400x200"
+                            alt="image-car"
+                            width={'100%'}
+                        />
                     }
                 </div>
-
                 <h2>{car.name}</h2>
-                <p>{car.category}</p>
+                <p>{(carCategory(car.category))}</p>
                 <label>
                     <p>Tentukan tanggal sewa mobil</p>
                     <DatePicker />
                 </label>
                 <Flex justify="space-between">
                     <p>Total</p>
-                    <p style={{ fontWeight: 'bold' }}>Rp. {car.price}</p>
+                    {car.price &&
+                        <p style={{ fontWeight: 'bold' }}>
+                            {(localPriceFormat(car.price))}
+                        </p>
+                    }
                 </Flex>
                 <Button type="primary" style={{ width: '100%' }}>Pesan Sekarang</Button>
             </Space>
@@ -92,7 +109,11 @@ const CarDetailPage = () => {
             <Header />
             <main>
                 <SearchBox />
-                <Flex wrap gap={'2rem'} style={{ margin: '5rem 0' }}>
+                <Flex
+                    wrap
+                    gap={'2rem'}
+                    style={{ margin: '5rem 0' }}
+                >
                     <DetailPackage />
                     <CardOrder car={carById} />
                 </Flex>

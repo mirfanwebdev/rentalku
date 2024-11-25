@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { carAPI } from "../../../api/carAPI";
-import CarDetail from "../../../interface/carDetail";
+import CarItem from "../../../interface/carItem";
 
 export const fetchCarById = createAsyncThunk(
     'car/fetchCarById',
@@ -15,7 +15,7 @@ export const fetchCarById = createAsyncThunk(
 )
 
 const initialState = {
-    carById: {} as CarDetail
+    carById: {} as CarItem
 }
 
 export const getCarByIdSlice = createSlice({

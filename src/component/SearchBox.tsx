@@ -1,17 +1,33 @@
 import { Button, Card, Flex, Input, Select } from "antd"
 import useSearch from "../hooks/useSearch"
-import { Link } from "react-router-dom"
 
 
 const SearchBox = () => {
-    const { name, category, price, status, handleName, handleCategory, handlePrice, handleStatus, handleSearch } = useSearch()
+    const {
+        name,
+        category,
+        price,
+        status,
+        handleName,
+        handleCategory,
+        handlePrice,
+        handleStatus,
+        handleSearch
+    } = useSearch()
 
     return (
         <Card style={{ position: "absolute", top: "-50px" }}>
             <Flex gap={'1rem'} wrap>
                 <label>
                     <p>Nama Mobil</p>
-                    <Input type="text" name="name" value={name} onChange={handleName} width={'208px'} placeholder="Ketik nama/tipe mobil" />
+                    <Input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={handleName}
+                        width={'208px'}
+                        placeholder="Ketik nama/tipe mobil"
+                    />
                 </label>
                 <label>
                     <p>Kategori</p>
@@ -49,13 +65,13 @@ const SearchBox = () => {
                         style={{ width: '208px' }}
                     />
                 </label>
-                <Button type="primary" onClick={() => handleSearch({ name, category, price, status })} style={{ marginTop: '22px' }}>Cari Mobil</Button>
-                {/* <Link to={
-                    // '/car/search?'
-                    '/car/search?' + name ? `name=${name}` : '' + category ? `category=${category}` : '' + price ? `minPrice=${price}` : '' + status ? `isRented=${status}` : ''
-                }>
-                    <Button type="primary" style={{ marginTop: '22px' }}>Cari Mobil</Button>
-                </Link> */}
+                <Button
+                    type="primary"
+                    onClick={() => handleSearch({ name, category, price, status })}
+                    style={{ marginTop: '22px' }}
+                >
+                    Cari Mobil
+                </Button>
             </Flex>
         </Card>
     )
