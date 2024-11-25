@@ -4,6 +4,9 @@ import Header from "../../component/Header"
 import SearchBox from "../../component/SearchBox"
 import { EXCLUDE, INCLUDE, ListFeature, RULES } from "../../utils/ListFeature"
 import './index.scss'
+import { useParams } from "react-router-dom"
+import useCarById from "../../hooks/useCarById"
+import CarDetail from "../../interface/carDetail"
 interface Section {
     title: string,
     list?: ListFeature,
@@ -50,20 +53,30 @@ const DetailPackage = () => {
     )
 }
 
-const CardOrder = () => {
+interface CardOrderProps {
+    car: CarDetail
+}
+
+const CardOrder = ({ car }: CardOrderProps) => {
     return (
         <Card>
             <Space direction="vertical">
-                <img src="https://placehold.co/400x200" alt="image-car" width={'100%'} />
-                <h2>Innova</h2>
-                <p>6-8 orang</p>
+                <div style={{ width: '400px', height: '200px' }}>
+                    {car.image ?
+                        <img src={car.image} alt={car.name} width={'100%'} />
+                        : <img src="https://placehold.co/400x200" alt="image-car" width={'100%'} />
+                    }
+                </div>
+
+                <h2>{car.name}</h2>
+                <p>{car.category}</p>
                 <label>
                     <p>Tentukan tanggal sewa mobil</p>
                     <DatePicker />
                 </label>
                 <Flex justify="space-between">
                     <p>Total</p>
-                    <p style={{ fontWeight: 'bold' }}>Rp. 1.000.000</p>
+                    <p style={{ fontWeight: 'bold' }}>Rp. {car.price}</p>
                 </Flex>
                 <Button type="primary" style={{ width: '100%' }}>Pesan Sekarang</Button>
             </Space>
@@ -72,6 +85,8 @@ const CardOrder = () => {
 }
 
 const CarDetailPage = () => {
+    const params = useParams()
+    const { carById } = useCarById(Number(params.id))
     return (
         <>
             <Header />
@@ -79,7 +94,7 @@ const CarDetailPage = () => {
                 <SearchBox />
                 <Flex wrap gap={'2rem'} style={{ margin: '5rem 0' }}>
                     <DetailPackage />
-                    <CardOrder />
+                    <CardOrder car={carById} />
                 </Flex>
             </main>
             <footer>

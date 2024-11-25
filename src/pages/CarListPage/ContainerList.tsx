@@ -1,4 +1,5 @@
 import { Button, Card, Col, Pagination, Row, Space } from "antd";
+import { Link } from "react-router-dom";
 
 export interface carItem {
     id: number
@@ -36,7 +37,9 @@ const ContainerList = ({ cars, current, total, handlePage }: ContainerListProps)
                                 <p>{item.name}</p>
                                 <p>Rp. {item.price}</p>
                                 <p style={{ width: '285px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum molestiae, excepturi asperiores repellendus perferendis explicabo molestias eos quibusdam sed! Perspiciatis fugit animi laborum rerum in fuga! Quisquam rem delectus odio!</p>
-                                <Button type="primary" style={{ width: '100%' }}>Pesan Sekarang</Button>
+                                <Link to={`/car/detail/${item.id}`}>
+                                    <Button type="primary" style={{ width: '100%' }}>Pesan Sekarang</Button>
+                                </Link>
                             </Space>
                         </Card>
                     </Col>
