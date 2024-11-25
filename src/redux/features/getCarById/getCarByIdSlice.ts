@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { carAPI } from "../../../api/carAPI";
+import CarItem from "../../../interface/carItem";
 
-const fetchCarById = createAsyncThunk(
+export const fetchCarById = createAsyncThunk(
     'car/fetchCarById',
     async (id: number) => {
         try {
@@ -13,21 +14,8 @@ const fetchCarById = createAsyncThunk(
     }
 )
 
-interface CarDetail {
-    id: number,
-    namde: string,
-    category: string,
-    price: number,
-    status: boolean,
-    image: string,
-    start_rent_at: string,
-    end_rent_at: string,
-    createAt: string,
-    updateAt: string
-}
-
 const initialState = {
-    carById: {} as CarDetail
+    carById: {} as CarItem
 }
 
 export const getCarByIdSlice = createSlice({
@@ -36,7 +24,7 @@ export const getCarByIdSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchCarById.fulfilled, (state, action) => {
-            state.carById = action.payload.data
+            state.carById = action.payload
         })
     }
 })
