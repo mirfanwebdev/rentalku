@@ -36,10 +36,10 @@ const LandingPage = () => {
                 </Hero>
             </Header>
             <main>
-                <section id="ourservices">
+                <section id="our-services">
                     <SectionOurServices />
                 </section>
-                <section id="whyus">
+                <section id="why-us">
                     <SectionWhyUs />
                 </section>
                 <section id="testimonial">
