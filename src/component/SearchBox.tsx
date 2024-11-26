@@ -1,8 +1,11 @@
 import { Button, Card, Flex, Input, Select } from "antd"
 import useSearch from "../hooks/useSearch"
 
+interface SearchBoxProps {
+    disabled?: boolean
+}
 
-const SearchBox = () => {
+const SearchBox = ({ disabled = false }: SearchBoxProps) => {
     const {
         name,
         category,
@@ -27,6 +30,7 @@ const SearchBox = () => {
                         onChange={handleName}
                         width={'208px'}
                         placeholder="Ketik nama/tipe mobil"
+                        disabled={disabled}
                     />
                 </label>
                 <label>
@@ -40,6 +44,7 @@ const SearchBox = () => {
                             { value: 'large', label: '6-8 orang' }
                         ]}
                         style={{ width: '208px' }}
+                        disabled={disabled}
                     />
                 </label>
                 <label>
@@ -51,6 +56,7 @@ const SearchBox = () => {
                             { value: 40000, label: '< 400.000' },
                             { value: 60000, label: '> 600.000' }
                         ]}
+                        disabled={disabled}
                     />
                 </label>
                 <label>
@@ -63,12 +69,14 @@ const SearchBox = () => {
                             { value: false, label: 'Tersedia' }
                         ]}
                         style={{ width: '208px' }}
+                        disabled={disabled}
                     />
                 </label>
                 <Button
                     type="primary"
                     onClick={() => handleSearch({ name, category, price, status })}
                     style={{ marginTop: '22px' }}
+                    disabled={disabled}
                 >
                     Cari Mobil
                 </Button>

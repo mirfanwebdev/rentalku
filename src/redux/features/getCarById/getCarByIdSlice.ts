@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { carAPI } from "../../../api/carAPI";
-import CarItem from "../../../interface/carItem";
+import CarItem from "../../../interface/CarItem";
 
 export const fetchCarById = createAsyncThunk(
     'car/fetchCarById',
