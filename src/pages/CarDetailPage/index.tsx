@@ -7,8 +7,10 @@ import { useParams } from "react-router-dom"
 import useCarById from "../../hooks/useCarById"
 import { carCategory } from "../../utils/carCategory"
 import { localPriceFormat } from "../../utils/localPriceFormat"
-import CarItem from "../../interface/carItem"
+import CarItem from "../../interface/CarItem"
 import './index.scss'
+import { UserOutlined } from "@ant-design/icons"
+import nameCapital from "../../utils/nameCapital"
 
 interface Section {
     title: string,
@@ -66,7 +68,8 @@ const CardOrder = ({ car }: CardOrderProps) => {
             <Space direction="vertical">
                 <div style={{
                     width: '400px',
-                    height: '200px'
+                    height: '200px',
+                    marginBottom: '1.5rem'
                 }}>
                     {car.image ?
                         <img
@@ -81,13 +84,13 @@ const CardOrder = ({ car }: CardOrderProps) => {
                         />
                     }
                 </div>
-                <h2>{car.name}</h2>
-                <p>{(carCategory(car.category))}</p>
+                {car.name && <h2>{(nameCapital(car.name))}</h2>}
+                <p><span><UserOutlined /></span> {(carCategory(car.category))}</p>
                 <label>
                     <p>Tentukan tanggal sewa mobil</p>
-                    <DatePicker />
+                    <DatePicker style={{ width: '80%' }} />
                 </label>
-                <Flex justify="space-between">
+                <Flex justify="space-between" style={{ margin: '1.5rem 0' }}>
                     <p>Total</p>
                     {car.price &&
                         <p style={{ fontWeight: 'bold' }}>
@@ -108,7 +111,7 @@ const CarDetailPage = () => {
         <>
             <Header />
             <main>
-                <SearchBox />
+                <SearchBox disabled={true} />
                 <Flex
                     wrap
                     gap={'2rem'}

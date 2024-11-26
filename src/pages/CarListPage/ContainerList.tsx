@@ -1,7 +1,7 @@
 import { Button, Card, Col, Pagination, Row, Space } from "antd";
 import { Link } from "react-router-dom";
 import { localPriceFormat } from "../../utils/localPriceFormat";
-import CarItem from "../../interface/carItem";
+import CarItem from "../../interface/CarItem";
 
 interface ContainerListProps {
     cars: CarItem[]
