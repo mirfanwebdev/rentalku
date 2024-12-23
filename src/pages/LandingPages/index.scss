@@ -2,6 +2,14 @@ section {
     margin: 8rem 0;
 }
 
+section#our-services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin: 5rem 0;
+}
+
 section#whyus {
     display: flex;
     flex-direction: column;
@@ -52,16 +60,9 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
-    header {
-        padding: 1.5rem 1rem 0 1rem;
-    }
-
-    header nav {
-        display: none;
-    }
 
     section, footer, #banner {
-        margin: 2.5rem 1rem;
+        margin: 2.5rem 0rem;
     }
     
 }
