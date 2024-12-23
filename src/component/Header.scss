@@ -1,0 +1,16 @@
+header {
+    background-color: #f1f3ff;
+    position: relative;
+    padding: 1.5rem 8.5rem 0  8.5rem;
+    min-height: 200px;
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        padding: 1.5rem 1rem 0 1rem;
+    }
+
+    header nav {
+        display: none;
+    }
+}
