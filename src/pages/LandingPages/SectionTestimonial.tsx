@@ -1,4 +1,4 @@
-import { Avatar, Card, Flex, Space } from "antd";
+import { Avatar, Card, Grid, Flex, Space } from "antd";
 import { StarFilled } from "@ant-design/icons";
 import { TESTIMONY_LIST as captionTestimonials } from "../../lib/constant";
 
@@ -42,10 +42,11 @@ const listTestimonials: Testimony[] = [
         content: captionTestimonials[2],
     }
 ]
+const { useBreakpoint } = Grid
 
 const Rating = ({ rating }: { rating: number }) => {
     return (
-        <Space style={{color: '#F9CC00'}}>
+        <Space style={{ color: '#F9CC00' }}>
             {[...Array(rating)].map((_, index) => (
                 <StarFilled key={index} />
             ))}
@@ -53,15 +54,17 @@ const Rating = ({ rating }: { rating: number }) => {
     )
 }
 
-const TestimonyCard = ({ imgUrl, name, age, city, rating, content }: Testimony ) => {
+const TestimonyCard = ({ imgUrl, name, age, city, rating, content }: Testimony) => {
+    const screens = useBreakpoint()
+
     return (
         <Card style={{ backgroundColor: '#F1F3FF' }}>
-            <Flex align="center" gap={'0.5rem'}>
+            <Flex vertical={screens.xs ? true : false} align="center" gap={'0.5rem'}>
                 <Avatar size={64} src={imgUrl} />
-                <Flex vertical style={{ maxWidth: '260px' }}>
+                <Flex vertical align={screens.xs ? 'center' : 'flex-start'} style={{ maxWidth: '260px' }}>
                     <Rating rating={rating} />
-                    <p>"{content}"</p>
-                    <p style={{fontWeight: 'bold', marginTop: '0.25rem'}}>{name} {age}, {city}</p>
+                    <p style={{ textAlign: screens.xs ? 'center' : 'left' }}>"{content}"</p>
+                    <p style={{ fontWeight: 'bold', marginTop: '0.25rem' }}>{name} {age}, {city}</p>
                 </Flex>
             </Flex>
         </Card>
@@ -81,10 +84,10 @@ const SectionTestimonial = () => {
     return (
         <>
             <h2>Testimonial</h2>
-            <p style={{textAlign: 'center'}}>Berbagai review positif dari beberapa pelanggan kami.</p>
-            <Testimonials/>
+            <p style={{ textAlign: 'center' }}>Berbagai review positif dari beberapa pelanggan kami.</p>
+            <Testimonials />
         </>
- )
+    )
 }
 
 export default SectionTestimonial;
