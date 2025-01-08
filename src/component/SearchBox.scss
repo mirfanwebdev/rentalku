@@ -1,0 +1,15 @@
+.search-wrapper {
+    position: absolute;
+    top: -50px;
+}
+
+@media screen and (max-width: 576px) {
+    .search-wrapper {
+        position: static;
+        margin: 2rem 0;
+    }
+
+    label {
+        width: 100%;
+    }
+}
