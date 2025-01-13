@@ -9,10 +9,20 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+   
+}
+
 body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    scroll-padding-top: 5vh;
+}
+
+body>div {
+   overflow: hidden;
 }
 
 a {
