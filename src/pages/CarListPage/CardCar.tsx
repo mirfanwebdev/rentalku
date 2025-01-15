@@ -1,4 +1,4 @@
-import { Card, Space, Button, Grid, ConfigProvider } from "antd"
+import { Card, Button, Grid, ConfigProvider } from "antd"
 import { localPriceFormat } from "../../utils/localPriceFormat"
 import { Link } from "react-router-dom"
 const { useBreakpoint } = Grid
@@ -17,9 +17,9 @@ const CardCar = ({ image, name, price, id }: CardCarProps) => {
             theme={{
                 components: {
                     Card: {
-                        bodyPadding: 12,
+
                     },
-                }
+                },
             }}
         >
             <Card
@@ -46,12 +46,17 @@ const CardCar = ({ image, name, price, id }: CardCarProps) => {
             >
                 <Meta
                     title={name}
-                    description={localPriceFormat(price)}
+                    description={
+                        <>
+                            <p>{localPriceFormat(price)}</p>
+                            {screens.xs ? null : (<p style={{ width: '285px', padding: '0.5rem 0' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum molestiae, excepturi asperiores repellendus perferendis explicabo molestias eos quibusdam sed! Perspiciatis fugit animi laborum rerum in fuga! Quisquam rem delectus odio!</p>)}
+                            <Link to={`/car/detail/${id}`}>
+                                <Button type="primary" style={{ width: '100%' }}>Pesan Sekarang</Button>
+                            </Link>
+                        </>
+                    }
                 />
-                {screens.xs ? null : (<p style={{ width: '285px', padding: '0.5rem 0' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum molestiae, excepturi asperiores repellendus perferendis explicabo molestias eos quibusdam sed! Perspiciatis fugit animi laborum rerum in fuga! Quisquam rem delectus odio!</p>)}
-                <Link to={`/car/detail/${id}`}>
-                    <Button type="primary" style={{ width: '100%' }}>Pesan Sekarang</Button>
-                </Link>
+
             </Card>
         </ConfigProvider>
     )
