@@ -1,4 +1,4 @@
-import { Button, Card, Collapse, CollapseProps, DatePicker, Flex, Space } from "antd"
+import { Button, Card, Collapse, CollapseProps, DatePicker, Flex, Space, Grid } from "antd"
 import Footer from "../../component/Footer"
 import Header from "../../component/Header"
 import SearchBox from "../../component/SearchBox"
@@ -11,6 +11,7 @@ import CarItem from "../../interface/CarItem"
 import './index.scss'
 import { UserOutlined } from "@ant-design/icons"
 import nameCapital from "../../utils/nameCapital"
+const { useBreakpoint } = Grid
 
 interface Section {
     title: string,
@@ -46,8 +47,9 @@ const CollapseSection = () => {
 }
 
 const DetailPackage = () => {
+    const screens = useBreakpoint()
     return (
-        <Card style={{ width: 605 }}>
+        <Card style={{ width: screens.xs ? '100%' : 605 }}>
             <Space direction="vertical">
                 <h1>Tentang Paket</h1>
                 <DetailSection title="Include" list={INCLUDE} />
@@ -63,11 +65,12 @@ interface CardOrderProps {
 }
 
 const CardOrder = ({ car }: CardOrderProps) => {
+    const screens = useBreakpoint()
     return (
         <Card>
             <Space direction="vertical">
                 <div style={{
-                    width: '400px',
+                    width: screens.xs ? '100%' : '400px',
                     height: '200px',
                     marginBottom: '1.5rem'
                 }}>
