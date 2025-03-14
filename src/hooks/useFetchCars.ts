@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 const useFetchCars = (params: string) => {
     const dispatch: AppDispatch = useDispatch()
     const navigate = useNavigate()
-    const { carList, pageCurrent, itemTotal } = useSelector((state: Rootstate) => state.cars)
+    const { carList, pageCurrent, itemTotal, error, isLoading } = useSelector((state: Rootstate) => state.cars)
 
     useEffect(() => {
         dispatch(fetchCarList(params))
@@ -21,6 +21,8 @@ const useFetchCars = (params: string) => {
 
     return {
         carList,
+        error,
+        isLoading,
         current: pageCurrent,
         total: itemTotal,
         handlePage,
